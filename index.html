@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>BBRBet - Deposit ₹100 Get ₹877</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0a0c12;
+            color: #fff;
+            min-height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.68)), url('https://i.postimg.cc/59ps94pm/hand-play-place-use-background-tableau-680616-pxhere-com.jpg');
+            background-size: cover;
+            background-position: center 30%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 550px;
+            margin: 0 auto;
+            padding: 20px 18px 45px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .logo {
+            font-size: 38px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #FFE6B0, #FFB347);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .trust-badge {
+            display: inline-block;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            border-radius: 40px;
+            padding: 5px 16px;
+            font-size: 12px;
+            margin-top: 8px;
+            border: 0.5px solid rgba(255, 180, 60, 0.5);
+        }
+
+        .main-card {
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(10px);
+            border-radius: 48px;
+            padding: 24px 20px 32px;
+            margin: 16px 0;
+            border: 1px solid rgba(255, 180, 60, 0.5);
+            box-shadow: 0 20px 35px -10px black;
+        }
+
+        /* 滚屏区域 */
+        .marquee-wrap {
+            background: rgba(0,0,0,0.55);
+            border-radius: 60px;
+            padding: 12px 16px;
+            margin-bottom: 24px;
+            overflow: hidden;
+            white-space: nowrap;
+            backdrop-filter: blur(4px);
+            border: 0.5px solid rgba(255, 180, 60, 0.4);
+        }
+        .marquee-line {
+            display: inline-block;
+            animation: scrollMarquee 28s linear infinite;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+        .marquee-line span {
+            margin-right: 42px;
+            color: #FFE0A3;
+        }
+        @keyframes scrollMarquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* 倒计时 */
+        .countdown-box {
+            background: rgba(0,0,0,0.6);
+            border-radius: 80px;
+            padding: 12px 18px;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-weight: 600;
+            font-size: 15px;
+            border: 1px solid #FFB347;
+        }
+        .timer {
+            background: #000000aa;
+            padding: 8px 20px;
+            border-radius: 60px;
+            font-family: monospace;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            color: #FFD966;
+        }
+
+        /* 金额转换区 */
+        .offer-area {
+            text-align: center;
+            margin: 10px 0 18px;
+        }
+        .you-pay { font-size: 18px; color: #ddd; }
+        .pay-amount {
+            font-size: 72px;
+            font-weight: 800;
+            color: #FFD966;
+            text-shadow: 0 0 12px #FF9F00;
+            line-height: 1;
+            margin: 6px 0;
+        }
+        .arrow-down {
+            font-size: 38px;
+            margin: 6px 0;
+            animation: bounce 1s infinite;
+        }
+        .you-get { font-size: 18px; color: #ddd; }
+        .get-amount {
+            font-size: 84px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FFE6A0, #FFA559);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1;
+            margin-top: 6px;
+        }
+        @keyframes bounce {
+            0%,100%{ transform: translateY(0); }
+            50%{ transform: translateY(8px); }
+        }
+
+        .bonus-extra {
+            background: rgba(255, 180, 60, 0.2);
+            border-radius: 60px;
+            padding: 12px;
+            text-align: center;
+            margin: 20px 0 18px;
+            font-weight: bold;
+            font-size: 18px;
+            border: 0.5px solid #FFB347;
+        }
+        .bonus-extra span {
+            color: #FFD966;
+            font-size: 22px;
+        }
+
+        .cta-btn {
+            display: block;
+            width: 100%;
+            background: linear-gradient(95deg, #FFA41E, #E65C1E);
+            text-align: center;
+            padding: 16px;
+            border-radius: 60px;
+            font-size: 24px;
+            font-weight: 800;
+            color: #1c1505;
+            text-decoration: none;
+            margin: 10px 0 15px;
+            transition: 0.2s;
+            box-shadow: 0 6px 16px black;
+        }
+        .cta-btn:active { transform: scale(0.97); }
+
+        .payments {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin: 20px 0 8px;
+        }
+        .payment {
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            border-radius: 40px;
+            padding: 6px 18px;
+            font-size: 14px;
+        }
+        .trust {
+            text-align: center;
+            font-size: 12px;
+            color: #ccc;
+            margin-top: 16px;
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 14px; }
+            .pay-amount { font-size: 58px; }
+            .get-amount { font-size: 68px; }
+            .cta-btn { font-size: 20px; }
+            .timer { font-size: 22px; padding: 5px 14px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="logo">BBR<span style="color:#FFB347;">BET</span></div>
+        <div class="trust-badge">⚡ INDIA'S TRUSTED GAMING APP</div>
+    </div>
+
+    <div class="main-card">
+        <!-- 简洁滚屏：A won XXX one/two/three/four/five minutes ago -->
+        <div class="marquee-wrap">
+            <div class="marquee-line" id="marqueeLine">
+                <span>🏆 Raj won ₹1,20,000 one minute ago.</span>
+                <span>🏆 Priya won ₹17,000 one minute ago.</span>
+                <span>🏆 Amit won ₹50,000 two minutes ago.</span>
+                <span>🏆 Sneha won ₹1,05,000 two minutes ago.</span>
+                <span>🏆 Vikram won ₹32,000 three minutes ago.</span>
+                <span>🏆 Karan won ₹80,000 three minutes ago.</span>
+                <span>🏆 Riya won ₹1,70,000 four minutes ago.</span>
+                <span>🏆 Ankit won ₹45,000 four minutes ago.</span>
+                <span>🏆 Deepa won ₹1,50,000 five minutes ago.</span>
+                <span>🏆 Mohit won ₹28,000 five minutes ago.</span>
+                <span>🏆 Neha won ₹95,000 five minutes ago.</span>
+                <span>🏆 Arjun won ₹1,10,000 five minutes ago.</span>
+            </div>
+        </div>
+
+        <!-- 倒计时 00:09:38 -->
+        <div class="countdown-box">
+            🕐 OFFER EXPIRES IN:
+            <div class="timer" id="countdownTimer">00:09:38</div>
+        </div>
+
+        <div class="offer-area">
+            <div class="you-pay">👉 YOU PAY 👈</div>
+            <div class="pay-amount">₹100</div>
+            <div class="arrow-down">▼</div>
+            <div class="you-get">🎉 YOU INSTANTLY GET 🎉</div>
+            <div class="get-amount">₹877</div>
+        </div>
+
+        <div class="bonus-extra">
+            🎁 <span>₹777 BONUS</span> + 500% DEPOSIT MATCH 🎁
+        </div>
+
+        <a href="https://www.indwin.tech/apk/BBRBet.apk" class="cta-btn" id="downloadBtn">
+            ⚡ DOWNLOAD APK ⚡
+        </a>
+
+        <div class="payments">
+            <span class="payment">📱 UPI</span>
+            <span class="payment">📲 Paytm</span>
+            <span class="payment">📞 PhonePe</span>
+            <span class="payment">💳 GPay</span>
+        </div>
+        <div class="trust">
+            ✅ 10M+ Downloads | ⭐ 4.8 Rating | 🔒 Instant Withdrawal
+        </div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        // 倒计时 9分38秒
+        const TOTAL_SECONDS = 9 * 60 + 38;
+        const STORAGE_KEY = 'bbr_timer_end_final';
+
+        let endTimestamp = null;
+        const savedEnd = localStorage.getItem(STORAGE_KEY);
+
+        if (savedEnd) {
+            endTimestamp = parseInt(savedEnd, 10);
+            const nowSec = Math.floor(Date.now() / 1000);
+            if (nowSec >= endTimestamp) {
+                endTimestamp = nowSec + TOTAL_SECONDS;
+                localStorage.setItem(STORAGE_KEY, endTimestamp);
+            }
+        } else {
+            const nowSec = Math.floor(Date.now() / 1000);
+            endTimestamp = nowSec + TOTAL_SECONDS;
+            localStorage.setItem(STORAGE_KEY, endTimestamp);
+        }
+
+        const timerEl = document.getElementById('countdownTimer');
+        const ctaBtn = document.getElementById('downloadBtn');
+
+        function formatTime(seconds) {
+            const hrs = Math.floor(seconds / 3600);
+            const mins = Math.floor((seconds % 3600) / 60);
+            const secs = seconds % 60;
+            return `${String(hrs).padStart(2,'0')}:${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;
+        }
+
+        function updateTimerDisplay() {
+            const nowSec = Math.floor(Date.now() / 1000);
+            let remaining = endTimestamp - nowSec;
+            if (remaining <= 0) {
+                timerEl.innerText = "00:00:00";
+                if (ctaBtn && ctaBtn.innerText !== "⛔ OFFER EXPIRED ⛔") {
+                    ctaBtn.innerText = "⛔ OFFER EXPIRED ⛔";
+                    ctaBtn.style.opacity = "0.65";
+                    ctaBtn.style.pointerEvents = "none";
+                }
+                return;
+            }
+            timerEl.innerText = formatTime(remaining);
+        }
+
+        updateTimerDisplay();
+        setInterval(updateTimerDisplay, 1000);
+
+        // 滚屏无限循环
+        const marqueeWrap = document.querySelector('.marquee-wrap');
+        const originalMarquee = document.getElementById('marqueeLine');
+        if (originalMarquee && marqueeWrap) {
+            const clone = originalMarquee.cloneNode(true);
+            marqueeWrap.appendChild(clone);
+        }
+    })();
+</script>
+</body>
+</html>
