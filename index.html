@@ -13,34 +13,29 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #0a0c12;
-            color: #fff;
-            min-height: 100vh;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.68)), url('https://i.postimg.cc/59ps94pm/hand-play-place-use-background-tableau-680616-pxhere-com.jpg');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), url('https://i.postimg.cc/59ps94pm/hand-play-place-use-background-tableau-680616-pxhere-com.jpg');
             background-size: cover;
-            background-position: center 30%;
+            background-position: center 35%;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            min-height: 100vh;
+            color: #fff;
+            padding: 16px;
         }
 
         .container {
-            max-width: 550px;
+            max-width: 500px;
             margin: 0 auto;
-            padding: 20px 18px 45px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
 
+        /* 头部 */
         .header {
             text-align: center;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }
         .logo {
-            font-size: 38px;
+            font-size: 36px;
             font-weight: 800;
-            letter-spacing: 2px;
             background: linear-gradient(135deg, #FFE6B0, #FFB347);
             -webkit-background-clip: text;
             background-clip: text;
@@ -49,44 +44,30 @@
         .trust-badge {
             display: inline-block;
             background: rgba(0,0,0,0.5);
-            backdrop-filter: blur(4px);
             border-radius: 40px;
             padding: 5px 16px;
-            font-size: 12px;
-            margin-top: 8px;
+            font-size: 11px;
+            margin-top: 6px;
             border: 0.5px solid rgba(255, 180, 60, 0.5);
         }
 
-        .main-card {
-            background: rgba(0, 0, 0, 0.45);
-            backdrop-filter: blur(10px);
-            border-radius: 48px;
-            padding: 24px 20px 32px;
-            margin: 16px 0;
-            border: 1px solid rgba(255, 180, 60, 0.5);
-            box-shadow: 0 20px 35px -10px black;
-        }
-
-        /* 滚屏区域 */
+        /* 滚屏区域（不变） */
         .marquee-wrap {
-            background: rgba(0,0,0,0.55);
-            border-radius: 60px;
-            padding: 12px 16px;
-            margin-bottom: 24px;
+            background: rgba(0,0,0,0.5);
+            border-radius: 40px;
+            padding: 10px 12px;
+            margin-bottom: 20px;
             overflow: hidden;
             white-space: nowrap;
-            backdrop-filter: blur(4px);
-            border: 0.5px solid rgba(255, 180, 60, 0.4);
         }
         .marquee-line {
             display: inline-block;
             animation: scrollMarquee 28s linear infinite;
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 500;
-            letter-spacing: 0.3px;
         }
         .marquee-line span {
-            margin-right: 42px;
+            margin-right: 30px;
             color: #FFE0A3;
         }
         @keyframes scrollMarquee {
@@ -94,82 +75,104 @@
             100% { transform: translateX(-50%); }
         }
 
-        /* 倒计时 */
+        /* 倒计时 - 修复居中 */
         .countdown-box {
-            background: rgba(0,0,0,0.6);
-            border-radius: 80px;
-            padding: 12px 18px;
+            background: rgba(0,0,0,0.55);
+            border-radius: 60px;
+            padding: 12px 20px;
             margin-bottom: 28px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 12px;
-            font-weight: 600;
-            font-size: 15px;
+            align-items: center;
+            text-align: center;
             border: 1px solid #FFB347;
+        }
+        .countdown-label {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
         }
         .timer {
             background: #000000aa;
-            padding: 8px 20px;
-            border-radius: 60px;
+            padding: 6px 18px;
+            border-radius: 50px;
             font-family: monospace;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: bold;
-            letter-spacing: 3px;
             color: #FFD966;
+            min-width: 110px;
+            text-align: center;
         }
 
-        /* 金额转换区 */
-        .offer-area {
+        /* 核心卖点区 - 突出 100 → 877 */
+        .offer-card {
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(8px);
+            border-radius: 48px;
+            padding: 24px 20px;
+            margin-bottom: 20px;
             text-align: center;
-            margin: 10px 0 18px;
+            border: 1px solid rgba(255, 215, 0, 0.4);
         }
-        .you-pay { font-size: 18px; color: #ddd; }
+        .pay-block {
+            margin-bottom: 10px;
+        }
+        .pay-label {
+            font-size: 16px;
+            color: #ddd;
+            letter-spacing: 1px;
+        }
         .pay-amount {
-            font-size: 72px;
+            font-size: 64px;
             font-weight: 800;
             color: #FFD966;
             text-shadow: 0 0 12px #FF9F00;
-            line-height: 1;
-            margin: 6px 0;
+            line-height: 1.2;
         }
-        .arrow-down {
-            font-size: 38px;
-            margin: 6px 0;
+        .arrow-icon {
+            font-size: 36px;
+            margin: 8px 0;
             animation: bounce 1s infinite;
         }
-        .you-get { font-size: 18px; color: #ddd; }
+        .get-block {
+            margin-top: 5px;
+        }
+        .get-label {
+            font-size: 18px;
+            color: #FFE6B0;
+            font-weight: 600;
+        }
         .get-amount {
-            font-size: 84px;
+            font-size: 72px;
             font-weight: 800;
             background: linear-gradient(135deg, #FFE6A0, #FFA559);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            line-height: 1;
-            margin-top: 6px;
+            line-height: 1.2;
         }
         @keyframes bounce {
             0%,100%{ transform: translateY(0); }
             50%{ transform: translateY(8px); }
         }
 
+        /* 赠金区域 */
         .bonus-extra {
-            background: rgba(255, 180, 60, 0.2);
-            border-radius: 60px;
+            background: rgba(255, 180, 60, 0.18);
+            border-radius: 40px;
             padding: 12px;
             text-align: center;
-            margin: 20px 0 18px;
+            margin-bottom: 20px;
             font-weight: bold;
-            font-size: 18px;
+            font-size: 16px;
             border: 0.5px solid #FFB347;
         }
         .bonus-extra span {
             color: #FFD966;
-            font-size: 22px;
+            font-size: 20px;
         }
 
+        /* CTA按钮 */
         .cta-btn {
             display: block;
             width: 100%;
@@ -181,39 +184,41 @@
             font-weight: 800;
             color: #1c1505;
             text-decoration: none;
-            margin: 10px 0 15px;
-            transition: 0.2s;
-            box-shadow: 0 6px 16px black;
+            margin: 20px 0 15px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+            transition: transform 0.1s;
         }
-        .cta-btn:active { transform: scale(0.97); }
+        .cta-btn:active {
+            transform: scale(0.97);
+        }
 
+        /* 支付方式和信任 */
         .payments {
             display: flex;
             justify-content: center;
             gap: 14px;
             flex-wrap: wrap;
-            margin: 20px 0 8px;
+            margin: 15px 0 10px;
         }
         .payment {
             background: rgba(0,0,0,0.5);
-            backdrop-filter: blur(4px);
             border-radius: 40px;
-            padding: 6px 18px;
-            font-size: 14px;
+            padding: 6px 16px;
+            font-size: 13px;
         }
         .trust {
             text-align: center;
-            font-size: 12px;
+            font-size: 11px;
             color: #ccc;
-            margin-top: 16px;
+            margin-top: 10px;
         }
 
-        @media (max-width: 480px) {
-            .container { padding: 14px; }
-            .pay-amount { font-size: 58px; }
-            .get-amount { font-size: 68px; }
-            .cta-btn { font-size: 20px; }
-            .timer { font-size: 22px; padding: 5px 14px; }
+        /* 响应式微调 */
+        @media (max-width: 450px) {
+            .pay-amount { font-size: 52px; }
+            .get-amount { font-size: 58px; }
+            .timer { font-size: 20px; min-width: 100px; }
+            .countdown-box { padding: 10px 16px; }
         }
     </style>
 </head>
@@ -224,115 +229,114 @@
         <div class="trust-badge">⚡ INDIA'S TRUSTED GAMING APP</div>
     </div>
 
-    <div class="main-card">
-        <!-- 简洁滚屏：A won XXX one/two/three/four/five minutes ago -->
-        <div class="marquee-wrap">
-            <div class="marquee-line" id="marqueeLine">
-                <span>🏆 Raj won ₹1,20,000 one minute ago.</span>
-                <span>🏆 Priya won ₹17,000 one minute ago.</span>
-                <span>🏆 Amit won ₹50,000 two minutes ago.</span>
-                <span>🏆 Sneha won ₹1,05,000 two minutes ago.</span>
-                <span>🏆 Vikram won ₹32,000 three minutes ago.</span>
-                <span>🏆 Karan won ₹80,000 three minutes ago.</span>
-                <span>🏆 Riya won ₹1,70,000 four minutes ago.</span>
-                <span>🏆 Ankit won ₹45,000 four minutes ago.</span>
-                <span>🏆 Deepa won ₹1,50,000 five minutes ago.</span>
-                <span>🏆 Mohit won ₹28,000 five minutes ago.</span>
-                <span>🏆 Neha won ₹95,000 five minutes ago.</span>
-                <span>🏆 Arjun won ₹1,10,000 five minutes ago.</span>
-            </div>
+    <!-- 滚屏（12条赢奖记录） -->
+    <div class="marquee-wrap">
+        <div class="marquee-line" id="marqueeLine">
+            <span>🏆 Raj won ₹1,20,000 one minute ago.</span>
+            <span>🏆 Priya won ₹17,000 one minute ago.</span>
+            <span>🏆 Amit won ₹50,000 two minutes ago.</span>
+            <span>🏆 Sneha won ₹1,05,000 two minutes ago.</span>
+            <span>🏆 Vikram won ₹32,000 three minutes ago.</span>
+            <span>🏆 Karan won ₹80,000 three minutes ago.</span>
+            <span>🏆 Riya won ₹1,70,000 four minutes ago.</span>
+            <span>🏆 Ankit won ₹45,000 four minutes ago.</span>
+            <span>🏆 Deepa won ₹1,50,000 five minutes ago.</span>
+            <span>🏆 Mohit won ₹28,000 five minutes ago.</span>
+            <span>🏆 Neha won ₹95,000 five minutes ago.</span>
+            <span>🏆 Arjun won ₹1,10,000 five minutes ago.</span>
         </div>
+    </div>
 
-        <!-- 倒计时 00:09:38 -->
-        <div class="countdown-box">
-            🕐 OFFER EXPIRES IN:
-            <div class="timer" id="countdownTimer">00:09:38</div>
-        </div>
+    <!-- 倒计时（修复居中） -->
+    <div class="countdown-box">
+        <span class="countdown-label">🕐 OFFER EXPIRES IN:</span>
+        <span class="timer" id="countdownTimer">00:09:38</span>
+    </div>
 
-        <div class="offer-area">
-            <div class="you-pay">👉 YOU PAY 👈</div>
+    <!-- 核心卖点卡片：100 → 877 -->
+    <div class="offer-card">
+        <div class="pay-block">
+            <div class="pay-label">👉 YOU PAY 👈</div>
             <div class="pay-amount">₹100</div>
-            <div class="arrow-down">▼</div>
-            <div class="you-get">🎉 YOU INSTANTLY GET 🎉</div>
+        </div>
+        <div class="arrow-icon">▼</div>
+        <div class="get-block">
+            <div class="get-label">🎉 YOU INSTANTLY GET 🎉</div>
             <div class="get-amount">₹877</div>
         </div>
+    </div>
 
-        <div class="bonus-extra">
-            🎁 <span>₹777 BONUS</span> + 500% DEPOSIT MATCH 🎁
-        </div>
+    <!-- 赠金说明 -->
+    <div class="bonus-extra">
+        🎁 <span>₹777 BONUS</span> + 500% DEPOSIT MATCH 🎁
+    </div>
 
-        <a href="https://www.indwin.tech/apk/BBRBet.apk" class="cta-btn" id="downloadBtn">
-            ⚡ DOWNLOAD APK ⚡
-        </a>
+    <!-- CTA下载按钮 -->
+    <a href="https://www.indwin.tech/apk/BBRBet.apk" class="cta-btn" id="downloadBtn">
+        ⚡ DOWNLOAD APK ⚡
+    </a>
 
-        <div class="payments">
-            <span class="payment">📱 UPI</span>
-            <span class="payment">📲 Paytm</span>
-            <span class="payment">📞 PhonePe</span>
-            <span class="payment">💳 GPay</span>
-        </div>
-        <div class="trust">
-            ✅ 10M+ Downloads | ⭐ 4.8 Rating | 🔒 Instant Withdrawal
-        </div>
+    <!-- 支付方式 -->
+    <div class="payments">
+        <span class="payment">📱 UPI</span>
+        <span class="payment">📲 Paytm</span>
+        <span class="payment">📞 PhonePe</span>
+        <span class="payment">💳 GPay</span>
+    </div>
+    <div class="trust">
+        ✅ 10M+ Downloads | ⭐ 4.8 Rating | 🔒 Instant Withdrawal
     </div>
 </div>
 
 <script>
+    // 固定3小时倒计时（从页面加载开始）
     (function() {
-        // 倒计时 9分38秒
-        const TOTAL_SECONDS = 9 * 60 + 38;
-        const STORAGE_KEY = 'bbr_timer_end_final';
+        const TOTAL_SECONDS = 9 * 60 + 38; // 00:09:38
+        const STORAGE_KEY = 'bbr_timer_end_v3';
 
-        let endTimestamp = null;
-        const savedEnd = localStorage.getItem(STORAGE_KEY);
+        let endTime = localStorage.getItem(STORAGE_KEY);
+        const now = Date.now();
 
-        if (savedEnd) {
-            endTimestamp = parseInt(savedEnd, 10);
-            const nowSec = Math.floor(Date.now() / 1000);
-            if (nowSec >= endTimestamp) {
-                endTimestamp = nowSec + TOTAL_SECONDS;
-                localStorage.setItem(STORAGE_KEY, endTimestamp);
-            }
+        if (endTime && parseInt(endTime) > now) {
+            endTime = parseInt(endTime);
         } else {
-            const nowSec = Math.floor(Date.now() / 1000);
-            endTimestamp = nowSec + TOTAL_SECONDS;
-            localStorage.setItem(STORAGE_KEY, endTimestamp);
+            endTime = now + TOTAL_SECONDS * 1000;
+            localStorage.setItem(STORAGE_KEY, endTime);
         }
 
         const timerEl = document.getElementById('countdownTimer');
-        const ctaBtn = document.getElementById('downloadBtn');
+        const btn = document.getElementById('downloadBtn');
 
-        function formatTime(seconds) {
-            const hrs = Math.floor(seconds / 3600);
-            const mins = Math.floor((seconds % 3600) / 60);
-            const secs = seconds % 60;
-            return `${String(hrs).padStart(2,'0')}:${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;
+        function formatTime(ms) {
+            const totalSec = Math.floor(ms / 1000);
+            const mins = Math.floor(totalSec / 60);
+            const secs = totalSec % 60;
+            return `${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}:00`;
         }
 
-        function updateTimerDisplay() {
-            const nowSec = Math.floor(Date.now() / 1000);
-            let remaining = endTimestamp - nowSec;
+        function updateTimer() {
+            const remaining = endTime - Date.now();
             if (remaining <= 0) {
                 timerEl.innerText = "00:00:00";
-                if (ctaBtn && ctaBtn.innerText !== "⛔ OFFER EXPIRED ⛔") {
-                    ctaBtn.innerText = "⛔ OFFER EXPIRED ⛔";
-                    ctaBtn.style.opacity = "0.65";
-                    ctaBtn.style.pointerEvents = "none";
+                if (btn && btn.innerText !== "⛔ EXPIRED ⛔️") {
+                    btn.innerText = "⛔ OFFER EXPIRED ⛔";
+                    btn.style.opacity = "0.65";
+                    btn.style.pointerEvents = "none";
                 }
                 return;
             }
             timerEl.innerText = formatTime(remaining);
         }
 
-        updateTimerDisplay();
-        setInterval(updateTimerDisplay, 1000);
+        updateTimer();
+        setInterval(updateTimer, 1000);
 
-        // 滚屏无限循环
-        const marqueeWrap = document.querySelector('.marquee-wrap');
-        const originalMarquee = document.getElementById('marqueeLine');
-        if (originalMarquee && marqueeWrap) {
-            const clone = originalMarquee.cloneNode(true);
-            marqueeWrap.appendChild(clone);
+        // 滚屏无缝循环
+        const wrap = document.querySelector('.marquee-wrap');
+        const original = document.getElementById('marqueeLine');
+        if (original && wrap) {
+            const clone = original.cloneNode(true);
+            wrap.appendChild(clone);
         }
     })();
 </script>
