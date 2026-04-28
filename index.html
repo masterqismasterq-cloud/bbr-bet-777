@@ -28,7 +28,6 @@
             margin: 0 auto;
         }
 
-        /* 头部 */
         .header {
             text-align: center;
             margin-bottom: 16px;
@@ -51,7 +50,6 @@
             border: 0.5px solid rgba(255, 180, 60, 0.5);
         }
 
-        /* 滚屏区域（不变） */
         .marquee-wrap {
             background: rgba(0,0,0,0.5);
             border-radius: 40px;
@@ -75,7 +73,6 @@
             100% { transform: translateX(-50%); }
         }
 
-        /* 倒计时 - 修复居中 */
         .countdown-box {
             background: rgba(0,0,0,0.55);
             border-radius: 60px;
@@ -84,13 +81,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            text-align: center;
             border: 1px solid #FFB347;
         }
         .countdown-label {
             font-size: 14px;
             font-weight: 600;
-            letter-spacing: 1px;
         }
         .timer {
             background: #000000aa;
@@ -104,7 +99,6 @@
             text-align: center;
         }
 
-        /* 核心卖点区 - 突出 100 → 877 */
         .offer-card {
             background: rgba(0,0,0,0.5);
             backdrop-filter: blur(8px);
@@ -120,7 +114,6 @@
         .pay-label {
             font-size: 16px;
             color: #ddd;
-            letter-spacing: 1px;
         }
         .pay-amount {
             font-size: 64px;
@@ -133,9 +126,6 @@
             font-size: 36px;
             margin: 8px 0;
             animation: bounce 1s infinite;
-        }
-        .get-block {
-            margin-top: 5px;
         }
         .get-label {
             font-size: 18px;
@@ -156,7 +146,6 @@
             50%{ transform: translateY(8px); }
         }
 
-        /* 赠金区域 */
         .bonus-extra {
             background: rgba(255, 180, 60, 0.18);
             border-radius: 40px;
@@ -172,7 +161,6 @@
             font-size: 20px;
         }
 
-        /* CTA按钮 */
         .cta-btn {
             display: block;
             width: 100%;
@@ -192,20 +180,24 @@
             transform: scale(0.97);
         }
 
-        /* 支付方式和信任 */
+        /* 支付方式 - 改为一行 + 可横向滑动 */
         .payments {
             display: flex;
             justify-content: center;
-            gap: 14px;
-            flex-wrap: wrap;
+            gap: 12px;
+            flex-wrap: nowrap;      /* 强制一行 */
+            overflow-x: auto;       /* 小屏幕可左右滑动 */
             margin: 15px 0 10px;
+            padding-bottom: 4px;
         }
         .payment {
             background: rgba(0,0,0,0.5);
             border-radius: 40px;
-            padding: 6px 16px;
+            padding: 6px 14px;
             font-size: 13px;
+            white-space: nowrap;
         }
+
         .trust {
             text-align: center;
             font-size: 11px;
@@ -213,12 +205,12 @@
             margin-top: 10px;
         }
 
-        /* 响应式微调 */
         @media (max-width: 450px) {
             .pay-amount { font-size: 52px; }
             .get-amount { font-size: 58px; }
             .timer { font-size: 20px; min-width: 100px; }
             .countdown-box { padding: 10px 16px; }
+            .payment { font-size: 11px; padding: 4px 10px; }
         }
     </style>
 </head>
@@ -229,7 +221,6 @@
         <div class="trust-badge">⚡ INDIA'S TRUSTED GAMING APP</div>
     </div>
 
-    <!-- 滚屏（12条赢奖记录） -->
     <div class="marquee-wrap">
         <div class="marquee-line" id="marqueeLine">
             <span>🏆 Raj won ₹1,20,000 one minute ago.</span>
@@ -247,13 +238,11 @@
         </div>
     </div>
 
-    <!-- 倒计时（修复居中） -->
     <div class="countdown-box">
         <span class="countdown-label">🕐 OFFER EXPIRES IN:</span>
         <span class="timer" id="countdownTimer">00:09:38</span>
     </div>
 
-    <!-- 核心卖点卡片：100 → 877 -->
     <div class="offer-card">
         <div class="pay-block">
             <div class="pay-label">👉 YOU PAY 👈</div>
@@ -266,17 +255,14 @@
         </div>
     </div>
 
-    <!-- 赠金说明 -->
     <div class="bonus-extra">
         🎁 <span>₹777 BONUS</span> + 500% DEPOSIT MATCH 🎁
     </div>
 
-    <!-- CTA下载按钮 -->
     <a href="https://www.indwin.tech/apk/BBRBet.apk" class="cta-btn" id="downloadBtn">
         ⚡ DOWNLOAD APK ⚡
     </a>
 
-    <!-- 支付方式 -->
     <div class="payments">
         <span class="payment">📱 UPI</span>
         <span class="payment">📲 Paytm</span>
@@ -289,31 +275,25 @@
 </div>
 
 <script>
-    // 固定3小时倒计时（从页面加载开始）
     (function() {
-        const TOTAL_SECONDS = 9 * 60 + 38; // 00:09:38
+        const TOTAL_SECONDS = 9 * 60 + 38;
         const STORAGE_KEY = 'bbr_timer_end_v3';
-
         let endTime = localStorage.getItem(STORAGE_KEY);
         const now = Date.now();
-
         if (endTime && parseInt(endTime) > now) {
             endTime = parseInt(endTime);
         } else {
             endTime = now + TOTAL_SECONDS * 1000;
             localStorage.setItem(STORAGE_KEY, endTime);
         }
-
         const timerEl = document.getElementById('countdownTimer');
         const btn = document.getElementById('downloadBtn');
-
         function formatTime(ms) {
             const totalSec = Math.floor(ms / 1000);
             const mins = Math.floor(totalSec / 60);
             const secs = totalSec % 60;
             return `${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}:00`;
         }
-
         function updateTimer() {
             const remaining = endTime - Date.now();
             if (remaining <= 0) {
@@ -327,11 +307,8 @@
             }
             timerEl.innerText = formatTime(remaining);
         }
-
         updateTimer();
         setInterval(updateTimer, 1000);
-
-        // 滚屏无缝循环
         const wrap = document.querySelector('.marquee-wrap');
         const original = document.getElementById('marqueeLine');
         if (original && wrap) {
